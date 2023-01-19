@@ -1,16 +1,108 @@
-# 这是一个示例 Python 脚本。
+import os
+from copy import deepcopy
 
-# 按 Shift+F10 执行或将其替换为您的代码。
-# 按 双击 Shift 在所有地方搜索类、文件、工具窗口、操作和设置。
+from tw2anal.date_change import date_change
+from tw2anal.emo_paddle import anal
+from tw2anal.int2str import int2str
+from tw2anal.str2int import str2int
+from tw2anal.tweet import sctweet
 
-
-def print_hi(name):
-    # 在下面的代码行中使用断点来调试脚本。
-    print(f'Hi, {name}')  # 按 Ctrl+F8 切换断点。
-
-
-# 按间距中的绿色按钮以运行脚本。
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    print(
+        "欢迎使用本程序！本程序包基于Scweet、paddle及其他开源软件包开发，请勿用于非法用途！请在位于中国大陆境外的服务器或者其他设备运行此程序！")
 
-# 访问 https://www.jetbrains.com/help/pycharm/ 获取 PyCharm 帮助
+    print("请输入您所需要抓取的推文的关键词：")
+    target_list = []
+    temp_tar = input()
+    if temp_tar != "":
+        target_list.append(temp_tar)
+
+    print("请依次输入查询时间上限：")
+
+    print("请输入查询开始的年份（大于2005的四位数字）：")
+    year = input()
+
+    print("请输入查询开始的月份（介于1-12之间的两位数字，例如01、04、10）：")
+    month = input()
+
+    print("请输入查询开始的月份（介于1-31之间的两位数字，例如01、04、10）：")
+    day = input()
+
+    lis_temp = [year, month, day]
+    begin_date = [int(year), int(month), int(day)]
+    begin_str = '-'.join(lis_temp)
+
+    print("请依次输入查询时间下限：")
+
+    print("请输入查询结束的年份（大于等于开始时间年份的四位数字）：")
+    year = input()
+
+    print("请输入查询开始的月份（介于1-12之间的两位数字，例如01、04、10）：")
+    month = input()
+
+    print("请输入查询开始的日期（介于1-31之间的两位数字，例如01、04、10）：")
+    day = input()
+
+    lis_temp = [year, month, day]
+    end_date = [int(year), int(month), int(day)]
+    end_str = '-'.join(lis_temp)
+
+    print("请指定您需要的查找模式，如果需要按时间查找推文请输入0，按热度查找请输入1：")
+    mode = int(input())
+    if mode == 0:
+        mode_str = "Latest"
+    else:
+        mode_str = "Top"
+
+    print("请输入您需要的数据分段方式：")
+    print("如果您需要每年生成一个文件，请输入0；每月生成一个文件输入1，每日生成一个文件输入2，不分段请输入3：")
+    operation_mode = int(input())
+    output_lis = []
+
+    name = deepcopy(target_list)
+    name.append(begin_str)
+    name.append(end_str)
+    save_dir_name = "-".join(name)
+
+    if operation_mode == 3:
+        output_lis = sctweet(target_list, mode_str,
+                             begin_str, end_str, save_dir_name)
+    else:
+        new_begin_date = []
+        temp_list = begin_str.split("-")
+        for i in temp_list:
+            j = int(i)
+            new_begin_date.append(j)
+        new_end_date = deepcopy(new_begin_date)
+        new_end_date[operation_mode] += 1
+
+        while True:
+            if int(new_begin_date[0]) > int(end_date[0]):
+                break
+            elif int(new_begin_date[0]) == int(end_date[0]) and int(new_begin_date[1]) > int(end_date[1]):
+                break
+            elif int(new_begin_date[0]) == int(end_date[0]) and int(new_begin_date[1]) == int(end_date[1]) and int(
+                    new_begin_date[2]) > int(end_date[2]):
+                break
+            else:
+                begin_date = deepcopy(new_begin_date)
+
+                begin_str = int2str(new_begin_date)
+                end_str = int2str(new_end_date)
+
+                output_lis = sctweet(target_list, mode_str,
+                                     begin_str, end_str, save_dir_name)
+                lis_new_date = date_change(
+                    new_begin_date, new_end_date, operation_mode)
+                new_begin_date = str2int(lis_new_date[0])
+                new_end_date = str2int(lis_new_date[1])
+
+    for filenames in os.walk(save_dir_name):
+        for filename in filenames:
+            if isinstance(filename, list):
+                for h in filename:
+                    path_name = [save_dir_name, h]
+                    path = "\\".join(path_name)
+                    anal(path, save_dir_name)
+
+    print("All assignments have been done!")
