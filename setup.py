@@ -1,10 +1,10 @@
 from distutils.core import setup
 
 setup(
-    name="tw2anal",
+    name="tweet2analysts",
     version="1.0.0",
     description="A module for this project.",
     author="yzbywyy",
-    py_modules=["tw2anal.date_change", "tw2anal.emo_paddle", "tw2anal.int2str", "tw2anal.str2int",
-                "tw2anal.time_convert", "tw2anal.tweet"]
+    py_modules=["tweet2analysts.date_change", "tweet2analysts.emo_paddle", "tweet2analysts.int2str", "tweet2analysts.str2int",
+                "tweet2analysts.time_convert", "tweet2analysts.tweet"]
 )

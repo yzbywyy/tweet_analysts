@@ -1,11 +1,11 @@
 import os
 from copy import deepcopy
 
-from tw2anal.date_change import date_change
-from tw2anal.emo_paddle import anal
-from tw2anal.int2str import int2str
-from tw2anal.str2int import str2int
-from tw2anal.tweet import sctweet
+from tweet2analysts.date_change import date_change
+from tweet2analysts.emo_paddle import anal
+from tweet2analysts.int2str import int2str
+from tweet2analysts.str2int import str2int
+from tweet2analysts.tweet import sctweet
 
 if __name__ == '__main__':
     print(
@@ -28,7 +28,7 @@ if __name__ == '__main__':
     print("请输入查询开始的月份（介于1-12之间的两位数字，例如01、04、10）：")
     month = input()
 
-    print("请输入查询开始的月份（介于1-31之间的两位数字，例如01、04、10）：")
+    print("请输入查询开始的日期（介于1-31之间的两位数字，例如01、04、10）：")
     day = input()
 
     lis_temp = [year, month, day]
