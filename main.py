@@ -11,11 +11,14 @@ if __name__ == '__main__':
     print(
         "欢迎使用本程序！本程序包基于Scweet、paddle及其他开源软件包开发，请勿用于非法用途！请在位于中国大陆境外的服务器或者其他设备运行此程序！")
 
-    print("请输入您所需要抓取的推文的关键词：")
+    print("请输入您所需要抓取的推文的关键词，输入完一个后回车，不输入直接回车则进入下一步：")
     target_list = []
-    temp_tar = input()
-    if temp_tar != "":
-        target_list.append(temp_tar)
+    while True:
+        temp_tar = input()
+        if temp_tar != "":
+            target_list.append(temp_tar)
+        else:
+            break
 
     print("请依次输入查询时间上限：")
 
