@@ -29,6 +29,11 @@ def anal(filepath, save_dir_name):
     plt.title('情感分直方图')
     plt.savefig("%s\\%s.png" % (save_dir_name, filename))
 
+    df.rename(columns={'positive_probs': filename}, inplace=True)
+    df1 = df[filename].describe()
+
+    return df1
+
 
 if __name__ == '__main__':
     print("Hello, World!")

@@ -1,6 +1,7 @@
 import os
+import pandas as pd
 from copy import deepcopy
-
+from tweet2analysts.move import move
 from tweet2analysts.date_change import date_change
 from tweet2analysts.emo_paddle import anal
 from tweet2analysts.int2str import int2str
@@ -87,7 +88,7 @@ if __name__ == '__main__':
             elif int(new_begin_date[0]) == int(end_date[0]) and int(new_begin_date[1]) > int(end_date[1]):
                 break
             elif int(new_begin_date[0]) == int(end_date[0]) and int(new_begin_date[1]) == int(end_date[1]) and int(
-                    new_begin_date[2]) > int(end_date[2]):
+                    new_begin_date[2]) >= int(end_date[2]):
                 break
             else:
                 begin_date = deepcopy(new_begin_date)
@@ -102,12 +103,19 @@ if __name__ == '__main__':
                 new_begin_date = str2int(lis_new_date[0])
                 new_end_date = str2int(lis_new_date[1])
 
+    df_outputs = pd.DataFrame()
     for filenames in os.walk(save_dir_name):
         for filename in filenames:
             if isinstance(filename, list):
                 for h in filename:
                     path_name = [save_dir_name, h]
                     path = "\\".join(path_name)
-                    anal(path, save_dir_name)
+                    df_temp = anal(path, save_dir_name)
+                    df_outputs = pd.concat([df_outputs, df_temp], axis=1)
+
+    df_outputs.to_csv("Outputs.csv")
+    df_outputs.to_excel("Outputs.xlsx")
+    move("Outputs.csv", save_dir_name)
+    move("Outputs.xlsx", save_dir_name)
 
     print("All assignments have been done!")
