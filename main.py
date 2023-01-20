@@ -67,6 +67,8 @@ if __name__ == '__main__':
     name.append(end_str)
     save_dir_name = "-".join(name)
 
+    save_dir_name = "Outputs\\" + save_dir_name
+
     if operation_mode == 3:
         output_lis = sctweet(target_list, mode_str,
                              begin_str, end_str, save_dir_name)
