@@ -17,28 +17,7 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="\Outputs\hololive-2020-01-01-2020-01-03\hololive_2020-01-01_2020-01-02.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
         <entry key="\Outputs\honkai-2020-07-29-2020-08-02\Outputs.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\Outputs\nijisanji-2021-01-01-2021-01-03\nijisanji_2021-01-01_2021-01-02.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\Outputs\nijisanji-2021-01-01-2021-01-03\nijisanji_2021-01-01_2021-01-02.csv.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

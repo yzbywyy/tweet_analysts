@@ -1,10 +1,12 @@
 import os
-import pandas as pd
 from copy import deepcopy
-from tweet2analysts.move import move
+
+import pandas as pd
+
 from tweet2analysts.date_change import date_change
 from tweet2analysts.emo_paddle import anal
 from tweet2analysts.int2str import int2str
+from tweet2analysts.move import move
 from tweet2analysts.str2int import str2int
 from tweet2analysts.tweet import sctweet
 
