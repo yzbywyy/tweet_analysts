@@ -13,15 +13,23 @@ from tweet2analysts.tweet import sctweet
 if __name__ == '__main__':
     print(
         "欢迎使用本程序！本程序包基于Scweet、paddle及其他开源软件包开发，请勿用于非法用途！请在位于中国大陆境外的服务器或者其他设备运行此程序！")
+    print("由于Scweet的设计问题，如果您使用代理，结果可能会大幅度减少，该问题暂时没有实用的解决方案。")
+    print("请输入您的搜索模式，输入0则为关键词查找模式，输入1则为tag查找模式")
+    search_mode = int(input())
 
-    print("请输入您所需要抓取的推文的关键词，输入完一个后回车，不输入直接回车则进入下一步：")
     target_list = []
-    while True:
-        temp_tar = input()
-        if temp_tar != "":
-            target_list.append(temp_tar)
-        else:
-            break
+    hash_tag = "null"
+    if search_mode == 0:
+        print("请输入您所需要抓取的推文的关键词，输入完一个后回车，不输入直接回车则进入下一步：")
+        while True:
+            temp_tar = input()
+            if temp_tar != "":
+                target_list.append(temp_tar)
+            else:
+                break
+    else:
+        print("请输入您所需要抓取的推文的tag，只能输入一个，输完后回车：")
+        hash_tag = input()
 
     print("请依次输入查询时间上限：")
 
@@ -63,9 +71,27 @@ if __name__ == '__main__':
     print("请输入您需要的数据分段方式：")
     print("如果您需要每年生成一个文件，请输入0；每月生成一个文件输入1，每日生成一个文件输入2，不分段请输入3：")
     operation_mode = int(input())
+
+    print(
+        "是否需要为了大幅度降低搜索时间而减少搜索的次数？注意，此功能为测试功能，可能存在bug，请谨慎使用，需要最快请输入1，一般提速请输入2，否则请输入0：")
+    test = int(input())
+    if test == 1:
+        if operation_mode == 0:
+            interval_day = 365
+        elif operation_mode == 1:
+            interval_day = 30
+        else:
+            interval_day = 1
+    elif test == 0:
+        interval_day = 1
+    else:
+        interval_day = 7
     output_lis = []
 
-    name = deepcopy(target_list)
+    if target_list:
+        name = deepcopy(target_list)
+    else:
+        name = [hash_tag]
     name.append(begin_str)
     name.append(end_str)
     save_dir_name = "-".join(name)
@@ -73,7 +99,7 @@ if __name__ == '__main__':
     save_dir_name = "Outputs\\" + save_dir_name
 
     if operation_mode == 3:
-        output_lis = sctweet(target_list, mode_str,
+        output_lis = sctweet(interval_day, search_mode, target_list, hash_tag, mode_str,
                              begin_str, end_str, save_dir_name)
     else:
         new_begin_date = []
@@ -98,7 +124,7 @@ if __name__ == '__main__':
                 begin_str = int2str(new_begin_date)
                 end_str = int2str(new_end_date)
 
-                output_lis = sctweet(target_list, mode_str,
+                output_lis = sctweet(interval_day, search_mode, target_list, hash_tag, mode_str,
                                      begin_str, end_str, save_dir_name)
                 lis_new_date = date_change(
                     new_begin_date, new_end_date, operation_mode)
