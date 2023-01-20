@@ -2,4 +2,6 @@ scweet~=1.8
 matplotlib~=3.6.3
 numpy~=1.24.1
 paddlehub~=2.3.1
+selenium==4.2.0
 pandas~=1.5.2
+openpyxl~=3.0.10

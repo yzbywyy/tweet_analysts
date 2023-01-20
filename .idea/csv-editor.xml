@@ -24,6 +24,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\Outputs\huawei-2021-01-01-2021-01-04\Outputs.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\Outputs\nijisanji-hololive-2022-12-28-2023-01-04\Outputs.csv">
           <value>
             <Attribute>
@@ -32,6 +39,62 @@
           </value>
         </entry>
         <entry key="\Outputs\nissan-2017-03-29-2017-04-03\nissan_2017-04-02_2017-04-03.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Outputs\nissan-2019-12-29-2020-01-03\nissan_2019-12-29_2019-12-30.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Outputs\nissan-2019-12-29-2020-01-03\nissan_2019-12-30_2019-12-31.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Outputs\nissan-2019-12-29-2020-01-03\nissan_2019-12-31_2020-01-01.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Outputs\nissan-2019-12-29-2020-01-03\nissan_2020-01-01_2020-01-02.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Outputs\nissan-2019-12-29-2020-01-03\nissan_2020-01-02_2020-01-03.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Outputs\比亚迪-2022-01-01-2022-01-04\比亚迪_2022-01-01_2022-01-02.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Outputs\比亚迪-2022-01-01-2022-01-04\比亚迪_2022-01-02_2022-01-03.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Outputs\比亚迪-2022-01-01-2022-01-04\比亚迪_2022-01-03_2022-01-04.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
