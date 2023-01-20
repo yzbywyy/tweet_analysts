@@ -3,42 +3,7 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
-        <entry key="\Outputs\CFAU-2021-03-29-2021-04-02\Outputs.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\Outputs\genshin-2020-11-01-2020-11-04\Outputs.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\Outputs\honkai-2020-07-29-2020-08-02\Outputs.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
         <entry key="\Outputs\huawei-2021-01-01-2021-01-04\Outputs.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\Outputs\nijisanji-hololive-2022-12-28-2023-01-04\Outputs.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\Outputs\nissan-2017-03-29-2017-04-03\nissan_2017-04-02_2017-04-03.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
