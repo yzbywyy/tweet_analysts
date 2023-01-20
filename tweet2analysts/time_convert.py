@@ -14,8 +14,12 @@ def month_add(timeOrigin):
         m_d = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     else:
         m_d = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    if timeOrigin[1] > 12:
+        timeOrigin[0] += 1
+        timeOrigin[1] = 1
+        timeOrigin[2] = 1
     if timeOrigin[2] > m_d[(timeOrigin[1] - 1)]:
-        if timeOrigin[1] >= 12:
+        if timeOrigin[1] == 12:
             timeOrigin[1] = 1
             timeOrigin[2] = 1
             timeOrigin[0] += 1
