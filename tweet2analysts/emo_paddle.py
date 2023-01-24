@@ -1,15 +1,26 @@
 import os.path
-
+import sys
 import matplotlib.pyplot as plt
 import numpy as np
 import paddlehub as hub
 import pandas as pd
 
 
+def is_empty(df):
+    if df.empty:
+        return True
+    else:
+        return False
+
+
 def anal(filepath, save_dir_name):
     senta = hub.Module(name="senta_lstm")
 
     data = pd.read_csv(filepath)
+
+    if is_empty(data):
+        return 0
+
     filename = os.path.basename(filepath)
 
     test_text = list(data['Embedded_text'])
@@ -31,6 +42,7 @@ def anal(filepath, save_dir_name):
 
     df.rename(columns={'positive_probs': filename}, inplace=True)
     df1 = df[filename].describe()
+    sys.sleep(1)
 
     return df1
 

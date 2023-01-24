@@ -3,6 +3,48 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
+        <entry key="\Outputs\Belt and Road Initiative-2015-01-01-2023-01-01\Belt and Road Initiative_2015-01-01_2015-02-01.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Outputs\Belt and Road Initiative-2015-01-01-2023-01-01\Belt and Road Initiative_2015-01-01_2015-02-01.csv.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Outputs\Belt and Road Initiative-2015-01-01-2023-01-01\Belt and Road Initiative_2015-02-01_2015-03-01.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Outputs\Belt and Road Initiative-2015-01-01-2023-01-01\Belt and Road Initiative_2015-03-01_2015-04-01.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Outputs\Belt and Road Initiative-2015-01-01-2023-01-01\Belt and Road Initiative_2015-04-01_2015-05-01.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Outputs\Belt and Road Initiative-2015-01-01-2023-01-01\Belt and Road Initiative_2018-12-01_2019-01-01.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\Outputs\China-2013-01-01-2023-01-01\Outputs.csv">
           <value>
             <Attribute>
