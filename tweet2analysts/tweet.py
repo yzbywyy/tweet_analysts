@@ -1,5 +1,6 @@
-from Scweet.scweet import scrape
 import time
+
+from Scweet.scweet import scrape
 
 
 def sctweet(interval_day, search_mode, target_lis, hash_tag, mode_str, start_date_str, end_date_str, save_dir_name):

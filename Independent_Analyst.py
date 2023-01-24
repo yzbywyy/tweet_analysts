@@ -1,7 +1,10 @@
-import pandas as pd
+import gc
 import os
-from tweet2analysts.move import move
+
+import pandas as pd
+
 from tweet2analysts.emo_paddle import anal
+from tweet2analysts.move import move
 
 result_dir = "Outputs"
 list_dir = os.listdir(result_dir)
@@ -14,12 +17,14 @@ for filenames in os.walk(save_dir_name):
         if isinstance(filename, list):
             for h in filename:
                 path_name = [save_dir_name, h]
+                print("正在分析%s，请稍候……" % h)
                 path = "\\".join(path_name)
                 df_temp = anal(path, save_dir_name)
                 if isinstance(df_temp, int):
                     pass
                 else:
                     df_outputs = pd.concat([df_outputs, df_temp], axis=1)
+                gc.collect()
 
 df_outputs.to_csv("Outputs.csv")
 df_outputs.to_excel("Outputs.xlsx")
