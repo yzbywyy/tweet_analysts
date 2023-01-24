@@ -139,7 +139,10 @@ if __name__ == '__main__':
                     path_name = [save_dir_name, h]
                     path = "\\".join(path_name)
                     df_temp = anal(path, save_dir_name)
-                    df_outputs = pd.concat([df_outputs, df_temp], axis=1)
+                    if isinstance(df_temp, int):
+                        pass
+                    else:
+                        df_outputs = pd.concat([df_outputs, df_temp], axis=1)
 
     df_outputs.to_csv("Outputs.csv")
     df_outputs.to_excel("Outputs.xlsx")
