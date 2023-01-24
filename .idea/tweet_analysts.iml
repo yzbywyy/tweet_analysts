@@ -5,7 +5,7 @@
       <excludeFolder url="file://$MODULE_DIR$/Outputs" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.10 (tweet_analysts)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="C:\Users\Administrator\anaconda3" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
