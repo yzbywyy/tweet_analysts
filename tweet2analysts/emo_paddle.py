@@ -1,5 +1,5 @@
 import os.path
-import sys
+import time
 import matplotlib.pyplot as plt
 import numpy as np
 import paddlehub as hub
@@ -42,7 +42,7 @@ def anal(filepath, save_dir_name):
 
     df.rename(columns={'positive_probs': filename}, inplace=True)
     df1 = df[filename].describe()
-    sys.sleep(1)
+    time.sleep(1)
 
     return df1
 

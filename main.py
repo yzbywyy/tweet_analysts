@@ -1,9 +1,7 @@
 import gc
 import os
 from copy import deepcopy
-
 import pandas as pd
-
 from tweet2analysts.date_change import date_change
 from tweet2analysts.emo_paddle import anal
 from tweet2analysts.int2str import int2str
