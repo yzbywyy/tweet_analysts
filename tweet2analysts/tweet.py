@@ -1,5 +1,5 @@
 from Scweet.scweet import scrape
-import sys
+import time
 
 
 def sctweet(interval_day, search_mode, target_lis, hash_tag, mode_str, start_date_str, end_date_str, save_dir_name):
@@ -17,7 +17,7 @@ def sctweet(interval_day, search_mode, target_lis, hash_tag, mode_str, start_dat
                       interval=interval_day, headless=True, display_type=mode_str, save_images=False,
                       proxy="127.0.0.1:7890", save_dir=save_dir_name,
                       resume=False, filter_replies=True, proximity=True)
-    sys.sleep(1)
+    time.sleep(1)
     return [data, save_dir_name]
 
 
