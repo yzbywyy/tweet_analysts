@@ -4,3 +4,5 @@
 
 如果您需要打开主程序，请打开Click_Me_to_Start.bat；
 如果您需要打开独立分析程序，请打开Click_Me_to_Start_Indepent_Analysts.bat。
+
+结果会自动导出到Outputs文件夹下的单独文件夹，文件夹内Outputs.xlsx为最终输出结果。
