@@ -1,2 +1,3 @@
 ECHO Please wait...
+cd /d %~dp0
 venv\Scripts\python.exe Independent_Analyst.py
